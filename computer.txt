@@ -1,0 +1,7 @@
+[
+    {"Produttore":"Asus", "Tipo":"Portatile", "Processore":"Intel Core i5", "RAM": "8GB", "Storage": "0"},
+    {"Produttore":"Acer", "Tipo":"All-in-one", "Processore":"Intel Core i3", "RAM": "4GB", "Storage": "1"},
+    {"Produttore":"HP", "Tipo":"Fisso", "Processore":"AMD Ryzen 5", "RAM": "8GB", "Storage": "0"},
+    {"Produttore":"Huawei", "Tipo":"Portatile", "Processore":"Intel Core i7", "RAM": "16GB", "Storage": "1"},
+    {"Produttore":"Apple", "Tipo":"Portatile", "Processore":"Intel Core i5", "RAM": "8GB", "Storage": "1"}
+]
