@@ -2,7 +2,7 @@ var pc = new Array();
 var storage = ["HDD", "SSD"];
 
 function carica(){
-    var url = "computer.json";
+    var url = "computer.txt";
     const xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function(){
@@ -30,7 +30,6 @@ function carica(){
     
     var titolo = document.createElement("TR");
     var ele = document.createElement("TH");
-    titolo.className="purple";
     ele.colSpan = ncol;
     ele.appendChild(txt);    
     titolo.appendChild(ele);
@@ -44,7 +43,6 @@ function carica(){
         ele.appendChild(txt);
       intestazione.appendChild(ele);
     }
-    intestazione.className="purple";
     tabella.appendChild(intestazione);
   
     for (var i in pc)
