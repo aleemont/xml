@@ -2,35 +2,36 @@ var pc = new Array();
 var storage = ["HDD", "SSD"];
 
 function carica(){
-    var url = "computer.json";
-    const xmlhttp = new XMLHttpRequest();
+    var url = "computer.txt";
+    var xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function(){
-        if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        if(xmlhttp.readyState == 4){
+          if(xmlhttp.status == 200){
             pc = JSON.parse(xmlhttp.responseText);
             stampa();
-        }
-        else{
+          }
+          else{
             document.getElementById("errori").innerHTML = "Errore";
         }
+      }
+       
     }
     xmlhttp.open("GET",url,true);
     xmlhttp.send();
 }
-
-{
+function stampa(){
     var ncol=0;
     for (key in pc)
       ncol++;
-    var tit = document.getElementsByTagName("TITLE");
-      var txt = tit[0].childNodes[0];
-    var tab = document.getElementById("pc");
-      tab.innerHTML="";
-      var tabella = document.createElement("TABLE");
+    var tit = document.getElementsByTagName("title");
+    var txt = tit[0].childNodes[0];
+    var tab = document.getElementById("computer");
+    tab.innerHTML="";
+    var tabella = document.createElement("TABLE");
     
     var titolo = document.createElement("TR");
     var ele = document.createElement("TH");
-    titolo.className="purple";
     ele.colSpan = ncol;
     ele.appendChild(txt);    
     titolo.appendChild(ele);
@@ -44,7 +45,6 @@ function carica(){
         ele.appendChild(txt);
       intestazione.appendChild(ele);
     }
-    intestazione.className="purple";
     tabella.appendChild(intestazione);
   
     for (var i in pc)
@@ -52,8 +52,8 @@ function carica(){
           var riga = document.createElement("TR");
       for (var x in pc[i])
       {
-          if (x=="Titolo")
-               txt = document.createTextNode(titStudio[pc[i][x]]);
+          if (x=="Storage")
+               txt = document.createTextNode(storage[pc[i][x]]);
                else
                    txt = document.createTextNode(pc[i][x]);
                ele = document.createElement("TD");
